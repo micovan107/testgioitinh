@@ -202,17 +202,25 @@ const resultDescription = document.getElementById('result-description');
 
 // Khởi tạo ứng dụng
 function init() {
-    // Thêm sự kiện cho các nút
-    startBtn.addEventListener('click', startQuiz);
-    prevBtn.addEventListener('click', showPreviousQuestion);
-    nextBtn.addEventListener('click', handleNextButton);
-    restartBtn.addEventListener('click', restartQuiz);
-    
-    // Ẩn nút quay lại ở câu hỏi đầu tiên
-    prevBtn.style.visibility = 'hidden';
-    
-    // Tạo các câu hỏi
-    createQuestions();
+    // Kiểm tra xem các phần tử DOM đã tồn tại chưa
+    if (startBtn && prevBtn && nextBtn && introSection && quizSection && 
+        resultsSection && questionContainer && progressBar && restartBtn && 
+        resultTitle && resultDescription) {
+        
+        // Thêm sự kiện cho các nút
+        startBtn.addEventListener('click', startQuiz);
+        prevBtn.addEventListener('click', showPreviousQuestion);
+        nextBtn.addEventListener('click', handleNextButton);
+        restartBtn.addEventListener('click', restartQuiz);
+        
+        // Ẩn nút quay lại ở câu hỏi đầu tiên
+        prevBtn.style.visibility = 'hidden';
+        
+        // Tạo các câu hỏi
+        createQuestions();
+    } else {
+        console.error('Không tìm thấy các phần tử DOM cần thiết cho bài kiểm tra giới tính');
+    }
 }
 
 // Tạo các câu hỏi
@@ -454,4 +462,6 @@ function restartQuiz() {
 }
 
 // Khởi tạo ứng dụng khi trang được tải
-document.addEventListener('DOMContentLoaded', init);
+document.addEventListener('DOMContentLoaded', function() {
+    init();
+});

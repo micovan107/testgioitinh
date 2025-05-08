@@ -3,21 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kiểm Tra Độ Chuẩn Giới Tính</title>
+    <title>Bài Kiểm Tra Tâm Lý</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>Kiểm Tra Độ Chuẩn Giới Tính</h1>
-            <p>Trả lời các câu hỏi dưới đây để biết mức độ phù hợp với các đặc điểm giới tính của bạn</p>
+            <h1>Bài Kiểm Tra Tâm Lý</h1>
+            <p>Chọn bài kiểm tra bạn muốn thực hiện</p>
         </header>
 
-        <div id="intro-section" class="section active">
-            <h2>Giới thiệu</h2>
+        <div id="test-selection" class="section active">
+            <div class="test-options">
+                <div class="test-option" id="gender-test">
+                    <h2>Kiểm Tra Độ Chuẩn Giới Tính</h2>
+                    <p>Trả lời các câu hỏi để biết mức độ phù hợp với các đặc điểm giới tính của bạn</p>
+                    <button class="btn select-test-btn" data-test="gender">Chọn</button>
+                </div>
+                <div class="test-option" id="iq-test">
+                    <h2>Kiểm Tra IQ</h2>
+                    <p>Trả lời các câu hỏi logic để đánh giá chỉ số thông minh của bạn</p>
+                    <button class="btn select-test-btn" data-test="iq">Chọn</button>
+                </div>
+                <div class="test-option" id="eq-test">
+                    <h2>Kiểm Tra EQ</h2>
+                    <p>Trả lời các câu hỏi để đánh giá chỉ số cảm xúc của bạn</p>
+                    <button class="btn select-test-btn" data-test="eq">Chọn</button>
+                </div>
+            </div>
+        </div>
+        
+        <div id="intro-section" class="section">
+            <h2>Giới thiệu - Kiểm Tra Độ Chuẩn Giới Tính</h2>
             <p>Bài kiểm tra này gồm 20 câu hỏi về sở thích, hành vi và quan điểm của bạn. Kết quả sẽ cho biết mức độ phù hợp của bạn với các đặc điểm giới tính truyền thống.</p>
             <p><strong>Lưu ý:</strong> Đây chỉ là bài kiểm tra giải trí và không có giá trị khoa học tuyệt đối.</p>
             <button id="start-btn" class="btn">Bắt đầu</button>
+        </div>
+        
+        <div id="intro-iq-section" class="section">
+            <h2>Giới thiệu - Kiểm Tra IQ</h2>
+            <p>Bài kiểm tra này gồm 15 câu hỏi logic, toán học và tư duy không gian. Kết quả sẽ cho biết chỉ số IQ ước tính của bạn.</p>
+            <p><strong>Lưu ý:</strong> Đây chỉ là bài kiểm tra giải trí và không có giá trị khoa học tuyệt đối.</p>
+            <button id="start-iq-btn" class="btn">Bắt đầu</button>
+        </div>
+        
+        <div id="intro-eq-section" class="section">
+            <h2>Giới thiệu - Kiểm Tra EQ</h2>
+            <p>Bài kiểm tra này gồm 15 câu hỏi về khả năng nhận biết, hiểu và quản lý cảm xúc. Kết quả sẽ cho biết chỉ số EQ ước tính của bạn.</p>
+            <p><strong>Lưu ý:</strong> Đây chỉ là bài kiểm tra giải trí và không có giá trị khoa học tuyệt đối.</p>
+            <button id="start-eq-btn" class="btn">Bắt đầu</button>
         </div>
 
         <div id="quiz-section" class="section">
@@ -33,8 +67,34 @@
             </div>
         </div>
 
+        <div id="quiz-iq-section" class="section">
+            <div id="progress-bar">
+                <div id="progress-iq"></div>
+            </div>
+            <div id="question-iq-container">
+                <!-- Câu hỏi IQ sẽ được thêm vào đây bằng JavaScript -->
+            </div>
+            <div class="navigation-buttons">
+                <button id="prev-iq-btn" class="btn nav-btn">Câu trước</button>
+                <button id="next-iq-btn" class="btn nav-btn">Câu tiếp</button>
+            </div>
+        </div>
+        
+        <div id="quiz-eq-section" class="section">
+            <div id="progress-bar">
+                <div id="progress-eq"></div>
+            </div>
+            <div id="question-eq-container">
+                <!-- Câu hỏi EQ sẽ được thêm vào đây bằng JavaScript -->
+            </div>
+            <div class="navigation-buttons">
+                <button id="prev-eq-btn" class="btn nav-btn">Câu trước</button>
+                <button id="next-eq-btn" class="btn nav-btn">Câu tiếp</button>
+            </div>
+        </div>
+
         <div id="results-section" class="section">
-            <h2>Kết quả của bạn</h2>
+            <h2>Kết quả Kiểm Tra Độ Chuẩn Giới Tính</h2>
             <div class="result-container">
                 <div class="result-chart">
                     <div class="chart-container">
@@ -47,11 +107,60 @@
                 </div>
             </div>
             <button id="restart-btn" class="btn">Làm lại bài kiểm tra</button>
+            <button id="back-to-menu-btn" class="btn">Quay lại menu</button>
             <div class="share-container">
                 <p>Chia sẻ kết quả:</p>
                 <div class="social-buttons">
                     <button class="social-btn facebook">Facebook</button>
                     <button class="social-btn twitter">Twitter</button>
+                </div>
+            </div>
+        </div>
+        
+        <div id="results-iq-section" class="section">
+            <h2>Kết quả Kiểm Tra IQ</h2>
+            <div class="result-container">
+                <div class="result-chart">
+                    <div class="chart-container">
+                        <canvas id="result-iq-chart"></canvas>
+                    </div>
+                </div>
+                <div class="result-text">
+                    <h3 id="result-iq-title"></h3>
+                    <p id="result-iq-description"></p>
+                </div>
+            </div>
+            <button id="restart-iq-btn" class="btn">Làm lại bài kiểm tra</button>
+            <button id="back-to-menu-iq-btn" class="btn">Quay lại menu</button>
+            <div class="share-container">
+                <p>Chia sẻ kết quả:</p>
+                <div class="social-buttons">
+                    <button class="social-iq-btn facebook">Facebook</button>
+                    <button class="social-iq-btn twitter">Twitter</button>
+                </div>
+            </div>
+        </div>
+        
+        <div id="results-eq-section" class="section">
+            <h2>Kết quả Kiểm Tra EQ</h2>
+            <div class="result-container">
+                <div class="result-chart">
+                    <div class="chart-container">
+                        <canvas id="result-eq-chart"></canvas>
+                    </div>
+                </div>
+                <div class="result-text">
+                    <h3 id="result-eq-title"></h3>
+                    <p id="result-eq-description"></p>
+                </div>
+            </div>
+            <button id="restart-eq-btn" class="btn">Làm lại bài kiểm tra</button>
+            <button id="back-to-menu-eq-btn" class="btn">Quay lại menu</button>
+            <div class="share-container">
+                <p>Chia sẻ kết quả:</p>
+                <div class="social-buttons">
+                    <button class="social-eq-btn facebook">Facebook</button>
+                    <button class="social-eq-btn twitter">Twitter</button>
                 </div>
             </div>
         </div>
@@ -63,5 +172,8 @@
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="script.js"></script>
+    <script src="script_iq.js"></script>
+    <script src="script_eq.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>
