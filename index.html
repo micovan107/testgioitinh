@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiểm Tra Độ Chuẩn Giới Tính</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Kiểm Tra Độ Chuẩn Giới Tính</h1>
+            <p>Trả lời các câu hỏi dưới đây để biết mức độ phù hợp với các đặc điểm giới tính của bạn</p>
+        </header>
+
+        <div id="intro-section" class="section active">
+            <h2>Giới thiệu</h2>
+            <p>Bài kiểm tra này gồm 20 câu hỏi về sở thích, hành vi và quan điểm của bạn. Kết quả sẽ cho biết mức độ phù hợp của bạn với các đặc điểm giới tính truyền thống.</p>
+            <p><strong>Lưu ý:</strong> Đây chỉ là bài kiểm tra giải trí và không có giá trị khoa học tuyệt đối.</p>
+            <button id="start-btn" class="btn">Bắt đầu</button>
+        </div>
+
+        <div id="quiz-section" class="section">
+            <div id="progress-bar">
+                <div id="progress"></div>
+            </div>
+            <div id="question-container">
+                <!-- Câu hỏi sẽ được thêm vào đây bằng JavaScript -->
+            </div>
+            <div class="navigation-buttons">
+                <button id="prev-btn" class="btn nav-btn">Câu trước</button>
+                <button id="next-btn" class="btn nav-btn">Câu tiếp</button>
+            </div>
+        </div>
+
+        <div id="results-section" class="section">
+            <h2>Kết quả của bạn</h2>
+            <div class="result-container">
+                <div class="result-chart">
+                    <div class="chart-container">
+                        <canvas id="result-chart"></canvas>
+                    </div>
+                </div>
+                <div class="result-text">
+                    <h3 id="result-title"></h3>
+                    <p id="result-description"></p>
+                </div>
+            </div>
+            <button id="restart-btn" class="btn">Làm lại bài kiểm tra</button>
+            <div class="share-container">
+                <p>Chia sẻ kết quả:</p>
+                <div class="social-buttons">
+                    <button class="social-btn facebook">Facebook</button>
+                    <button class="social-btn twitter">Twitter</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Kiểm Tra Độ Chuẩn Giới Tính. Tất cả các quyền được bảo lưu.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

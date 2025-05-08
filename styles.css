@@ -1,0 +1,244 @@
+/* Thiết lập chung */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 800px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+header h1 {
+    margin-bottom: 10px;
+    font-size: 2.2rem;
+}
+
+/* Phần nội dung */
+.section {
+    padding: 30px;
+    display: none;
+}
+
+.section.active {
+    display: block;
+}
+
+h2 {
+    color: #4a4a4a;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Nút bấm */
+.btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: block;
+    margin: 20px auto;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+/* Thanh tiến trình */
+#progress-bar {
+    width: 100%;
+    height: 10px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+
+#progress {
+    height: 100%;
+    background: linear-gradient(to right, #667eea, #764ba2);
+    border-radius: 5px;
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+/* Câu hỏi */
+#question-container {
+    margin-bottom: 30px;
+}
+
+.question {
+    display: none;
+}
+
+.question.active {
+    display: block;
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.question h3 {
+    color: #4a4a4a;
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.option {
+    background-color: #f5f7fa;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 15px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.option:hover {
+    border-color: #667eea;
+    background-color: #f0f4ff;
+}
+
+.option.selected {
+    border-color: #667eea;
+    background-color: #e6ebff;
+}
+
+/* Nút điều hướng */
+.navigation-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Kết quả */
+.result-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin: 30px 0;
+}
+
+.chart-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.result-text {
+    text-align: center;
+}
+
+.result-text h3 {
+    color: #4a4a4a;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.result-text p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Chia sẻ */
+.share-container {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.social-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.facebook {
+    background-color: #3b5998;
+}
+
+.twitter {
+    background-color: #1da1f2;
+}
+
+.social-btn:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    color: #666;
+    padding: 10px;
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+    
+    header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .section {
+        padding: 20px;
+    }
+    
+    .result-container {
+        flex-direction: column;
+    }
+}
